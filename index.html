@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mwachi Technologies</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+background:#050816;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* Glow background */
+body::before{
+content:"";
+position:fixed;
+width:600px;height:600px;
+background:linear-gradient(45deg,#00e5ff,#7c4dff);
+filter:blur(150px);
+top:-200px;left:-200px;
+z-index:-1;
+}
+
+/* ================= INTRO ================= */
+#intro{
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:#050816;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.neon-text{
+font-size:3rem;
+font-weight:800;
+letter-spacing:4px;
+text-align:center;
+background:linear-gradient(90deg,#00e5ff,#7c4dff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:0 0 20px #00e5ff,0 0 40px #7c4dff;
+opacity:0;
+animation:fadeIn 1.5s ease forwards, pulse 2s infinite alternate;
+}
+
+@keyframes fadeIn{to{opacity:1;}}
+@keyframes pulse{
+from{text-shadow:0 0 20px #00e5ff;}
+to{text-shadow:0 0 40px #7c4dff;}
+}
+
+.fade-out{animation:fadeOut 0.6s forwards;}
+@keyframes fadeOut{to{opacity:0;visibility:hidden;}}
+
+/* ================= HEADER ================= */
+header{
+position:fixed;width:100%;top:0;
+padding:15px 30px;
+display:flex;justify-content:space-between;align-items:center;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+header h1{
+color:#00e5ff;
+text-shadow:0 0 10px #00e5ff;
+font-size:1.2rem;
+}
+
+nav button{
+background:none;border:none;color:#fff;margin:0 8px;cursor:pointer;
+}
+
+/* ================= HERO ================= */
+.hero{
+height:100vh;
+display:flex;flex-direction:column;
+justify-content:center;align-items:center;
+text-align:center;
+padding:0 20px;
+}
+
+.hero h2{
+font-size:3rem;
+font-weight:800;
+letter-spacing:2px;
+background:linear-gradient(90deg,#00e5ff,#7c4dff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+margin-top:10px;
+font-size:1.2rem;
+opacity:0.85;
+}
+
+/* ================= CONTAINER ================= */
+.container{width:90%;max-width:1100px;margin:auto;padding:60px 0;}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+/* ================= SERVICE CARDS ================= */
+.service-card{
+background:linear-gradient(145deg,rgba(255,255,255,0.06),rgba(0,0,0,0.4));
+border-radius:20px;
+padding:25px;
+transition:0.4s;
+border:1px solid rgba(0,229,255,0.25);
+}
+
+.service-card:hover{
+transform:translateY(-8px) scale(1.02);
+box-shadow:0 0 25px rgba(0,229,255,0.3);
+}
+
+.price{
+color:#00e5ff;
+font-weight:700;
+margin-top:10px;
+}
+
+/* ================= FORM (IMPROVED VISIBILITY) ================= */
+form{
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:20px;
+}
+
+form input, form select, form textarea{
+padding:14px;
+border-radius:10px;
+border:none;
+outline:none;
+background:#0f172a; /* darker solid background */
+color:#fff;
+border:1px solid #00e5ff;
+}
+
+form input::placeholder, form textarea::placeholder{
+color:#ccc;
+}
+
+/* ================= SOCIAL ================= */
+.social{
+display:flex;
+align-items:center;
+gap:10px;
+padding:12px;
+margin-top:10px;
+border-radius:10px;
+background:rgba(255,255,255,0.05);
+text-decoration:none;
+color:#fff;
+transition:0.3s;
+}
+
+.social:hover{
+background:rgba(0,229,255,0.1);
+}
+
+/* ================= WHATSAPP ================= */
+.whatsapp{
+position:fixed;
+bottom:20px;right:20px;
+background:#25D366;
+padding:15px;
+border-radius:50%;
+cursor:pointer;
+font-size:20px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+.hero h2{font-size:2.2rem;}
+.neon-text{font-size:2rem;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+<div class="neon-text">MWACHI TECHNOLOGIES</div>
+</div>
+
+<header>
+<h1>MWACHI TECHNOLOGIES</h1>
+<nav>
+<button onclick="scrollToSec('services')">Services</button>
+<button onclick="scrollToSec('booking')">Book</button>
+<button onclick="scrollToSec('contact')">Contact</button>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<h2>MWACHI TECHNOLOGIES</h2>
+<p>Creative Solutions, Digital Impact.</p>
+</section>
+
+<div class="container">
+
+<!-- SERVICES -->
+<section id="services">
+<h2>Our Services</h2>
+<div class="grid">
+
+<div class="service-card">
+<h3>🎨 Logo Design</h3>
+<p>Build a strong brand identity</p>
+<div class="price">KES 1,000</div>
+</div>
+
+<div class="service-card">
+<h3>🌐 Website Development</h3>
+<p>Modern responsive websites</p>
+<div class="price">KES 26,000</div>
+</div>
+
+<div class="service-card">
+<h3>📱 Social Media Management</h3>
+<p>Grow your online presence</p>
+<div class="price">Negotiable</div>
+</div>
+
+<div class="service-card">
+<h3>🎬 Video Editing</h3>
+<p>Professional content creation</p>
+<div class="price">Negotiable</div>
+</div>
+
+<div class="service-card">
+<h3>🔧 Electronics Repair</h3>
+<p>Fix phones, laptops & devices</p>
+<div class="price">Negotiable</div>
+</div>
+
+</div>
+</section>
+
+<!-- BOOKING FORM -->
+<section id="booking">
+<h2>Request a Service</h2>
+
+<form onsubmit="sendToWhatsApp(event)">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="tel" id="phone" placeholder="Phone Number" required>
+
+<select id="service" required>
+<option value="">Select Service</option>
+<option>Logo Design</option>
+<option>Website Development</option>
+<option>Social Media Management</option>
+<option>Video Editing</option>
+<option>Electronics Repair</option>
+</select>
+
+<textarea id="message" placeholder="Describe what you need..." required></textarea>
+
+<button type="submit" style="padding:12px;border:none;border-radius:25px;background:linear-gradient(90deg,#00e5ff,#7c4dff);font-weight:bold;cursor:pointer;">
+Send Request
+</button>
+</form>
+</section>
+
+<!-- SOCIAL -->
+<section>
+<h2>Find Us</h2>
+
+<a class="social" href="https://www.facebook.com/share/1BncrSweLD/" target="_blank">
+<!-- Facebook SVG -->
+<svg width="20" height="20" fill="#1877F2" viewBox="0 0 24 24">
+<path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6v2h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/>
+</svg>
+Facebook
+</a>
+
+<a class="social" href="https://www.instagram.com/dj_nostar?igsh=bm4wYXZjYXFrNGU2" target="_blank">
+<!-- Instagram SVG -->
+<svg width="20" height="20" viewBox="0 0 24 24">
+<path fill="url(#ig)" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z"/>
+</svg>
+Instagram
+</a>
+
+<a class="social" href="https://www.tiktok.com/@.mwachi?_r=1&_t=ZS-95nyyOHF2EH" target="_blank">
+<!-- TikTok SVG -->
+<svg width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+<path d="M16 2c.3 2.5 1.9 4.5 4 5.2v2.6c-1.5 0-3-.5-4-1.3v6.6c0 3.4-2.7 6.1-6 6.1S4 18.5 4 15.1 6.7 9 10 9c.4 0 .8 0 1.2.1v2.9c-.4-.1-.8-.2-1.2-.2-1.8 0-3.2 1.5-3.2 3.3s1.4 3.3 3.2 3.3 3.2-1.5 3.2-3.3V2h2.8z"/>
+</svg>
+TikTok
+</a>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+<p>📞 0743882333</p>
+</section>
+
+</div>
+
+<div class="whatsapp" onclick="openWhatsApp()">💬</div>
+
+<script>
+function scrollToSec(id){
+document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+function openWhatsApp(){
+let msg = encodeURIComponent("Hello, I would like more information about your services.");
+window.open("https://wa.me/254743882333?text="+msg,'_blank');
+}
+
+function sendToWhatsApp(e){
+e.preventDefault();
+
+let name = document.getElementById('name').value;
+let phone = document.getElementById('phone').value;
+let service = document.getElementById('service').value;
+let message = document.getElementById('message').value;
+
+let text = `Hello Mwachi Technologies,%0A%0AName: ${name}%0APhone: ${phone}%0AService: ${service}%0ADetails: ${message}`;
+
+window.open(`https://wa.me/254743882333?text=${text}`,'_blank');
+}
+
+/* intro fade */
+setTimeout(()=>{
+document.getElementById('intro').classList.add('fade-out');
+},3000);
+</script>
+
+</body>
+</html>
